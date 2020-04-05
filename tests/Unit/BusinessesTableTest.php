@@ -29,25 +29,27 @@ class BusinessesTableTest extends TestCase
         $this->assertTrue(Schema::hasTable('users'));
         $this->assertEquals('Bob', $user->name);
         $this->assertEquals('bob@acme.test', $user->email);
+        $this->assertTrue(Schema::hasTable('businesses'));
 
         $this->assertEquals([
             'id',
+            'name',
+            'slug',
             'user_id',
-            'business_name',
-            'business_contact_name',
-            'business_contact_number',
-            'business_contact_email',
-            'business_website',
+            'category_id',
+            'contact_name',
+            'contact_number',
+            'contact_email',
+            'website',
             'address_1',
             'address_2',
             'area',
             'city',
             'country',
-            'business_profile',
-            'business_sectors',
-            'services',
+            'profile',
+            'sector_id',
             'business_hours',
-            'business_establishment_date',
+            'establishment_date',
             'geographical_area',
             'search_keywords',
             'created_at',

@@ -8,52 +8,27 @@ use Livewire\Component;
 
 class CreateBusinessEntry extends Component
 {
-    public $business_name;
-    public $business_contact_name;
-    public $business_contact_number;
-    public $business_contact_email;
-    public $business_website;
+    public $name;
+    public $contact_name;
+    public $contact_number;
+    public $contact_email;
+    public $website;
     public $address_1;
     public $address_2;
     public $area;
     public $city;
     public $country;
-    public $business_profile;
-    public $business_sectors;
+    public $profile;
+    public $sector_id;
     public $services;
     public $business_hours;
-    public $business_establishment_date;
+    public $establishment_date;
     public $geographical_area;
     public $search_keywords;
 
     protected $casts = [
-        'business_establishment_date' => 'date',
+        'establishment_date' => 'date',
     ];
-
-
-    public function mount()
-    {
-        // $business = request()->user()->business;
-
-        // $business_name = $business->business_name;
-        // $business_name = $business->business_name;
-        // $business_contact_name = $business->business_contact_name;
-        // $business_contact_number = $business->business_contact_number;
-        // $business_contact_email = $business->business_contact_email;
-        // $business_website = $business->business_website;
-        // $address_1 = $business->address_1;
-        // $address_2 = $business->address_2;
-        // $area = $business->area;
-        // $city = $business->city;
-        // $country = $business->country;
-        // $business_profile = $business->business_profile;
-        // $business_sectors = $business->business_sectors;
-        // $services = $business->services;
-        // $business_hours = $business->business_hours;
-        // $business_establishment_date = $business->business_establishment_date;
-        // $geographical_area = $business->geographical_area;
-        // $search_keywords = $business->search_keywords;
-    }
 
     public function render()
     {
@@ -63,35 +38,34 @@ class CreateBusinessEntry extends Component
     public function create()
     {
         $validatedData = $this->validate([
-            'business_name' => 'required',
-            'business_contact_name' => 'required',
-            'business_contact_number' => 'required',
-            'business_contact_email' => 'required',
-            'business_website' => 'sometimes|nullable|url',
+            'name' => 'required',
+            'contact_name' => 'required',
+            'contact_number' => 'required',
+            'contact_email' => 'required',
+            'website' => 'sometimes|nullable|url',
             'address_1' => 'required',
             'address_2' => 'sometimes|nullable|string',
             'area' => 'sometimes|nullable|string',
             'city' => 'required',
             'country' => 'required',
-            'business_profile' => 'sometimes|nullable|string',
-            'business_establishment_date' => 'sometimes',
+            'profile' => 'sometimes|nullable|string',
+            'establishment_date' => 'sometimes',
             'geographical_area' => 'sometimes',
         ]);
 
         $validatedData = $this->appendOptionalProperties($validatedData);
+        
         $business = Business::create($validatedData);
 
-        // dd($business);
+        $business->services()->syncWithoutDetaching($this->services);
+
+        return redirect()->to(route('businesses.index'));
     }
 
     public function appendOptionalProperties($validatedData)
     {
-        if (filled($this->business_sectors)) {
-            $validatedData = $this->appendProperty('business_sectors', $this->business_sectors, $validatedData);
-        }
-        
-        if (filled($this->services)) {
-            $validatedData = $this->appendProperty('services', $this->services, $validatedData);
+        if (filled($this->sector_id)) {
+            $validatedData = Arr::add($validatedData, 'sector_id', $this->sector_id);
         }
         
         if (filled($this->business_hours)) {

@@ -2,6 +2,8 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Common\Enums\Roles;
+use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -14,14 +16,23 @@ use Illuminate\Support\Str;
 | your application. Factories provide a convenient way to generate new
 | model instances for testing / seeding your application's database.
 |
-*/
+ */
 
 $factory->define(App\User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
+        'role_id' => Roles::USER,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
+    ];
+});
+
+$factory->state(App\User::class, 'admin', function () {
+    return [
+        'email' => config('app.admin.email'),
+        'name' => config('app.admin.name'),
+        'role_id' => Roles::ADMIN
     ];
 });

@@ -123,6 +123,18 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+
+    /*
+     |-------------------------------------------------------------------------
+     | Additional Configurations
+     | ------------------------------------------------------------------------
+     */
+
+    'admin' => [
+        'email' => env('DEFAULT_ADMIN_EMAIL'),
+        'name' => env('DEFAULT_ADMIN_NAME', 'Admin Account')
+     ],
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

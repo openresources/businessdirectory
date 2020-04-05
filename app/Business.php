@@ -3,22 +3,37 @@
 namespace App;
 
 use App\User;
-use Illuminate\Database\Eloquent\Model;
+use App\Sluggable;
+use App\Service;
+use App\Category;
 
-class Business extends Model
+class Business extends Sluggable
 {
     protected $guarded = [];
 
     protected $casts = [
-        'business_sectors' => 'json',
-        'services' => 'json',
         'business_hours' => 'json',
         'search_keywords' => 'json',
-        'business_establishment_date' => 'date',
+        'establishment_date' => 'date',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function sector()
+    {
+        return $this->belongsTo(Sector::class);
+    }
+
+    public function services()
+    {
+        return $this->belongsToMany(Service::class);
     }
 }

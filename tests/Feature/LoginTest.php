@@ -17,7 +17,7 @@ class LoginTest extends TestCase
      */
     public function testGuestIsRedirectedToLogin()
     {
-        $response = $this->get('/');
+        $response = $this->get(route('businesses.index'));
         $this->assertGuest();
         $response->assertRedirect(route('login'));
     }

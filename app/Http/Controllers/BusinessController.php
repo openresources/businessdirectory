@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Business;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Business;
 
 class BusinessController extends Controller
 {
@@ -14,7 +16,8 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        //
+        $businesses = DB::table('businesses')->get();
+        return view('businesses.index', compact('businesses'));
     }
 
     /**

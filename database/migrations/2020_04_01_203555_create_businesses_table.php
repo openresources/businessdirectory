@@ -15,22 +15,23 @@ class CreateBusinessesTable extends Migration
     {
         Schema::create('businesses', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+            $table->string('slug')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
-            $table->string('business_name')->nullable();
-            $table->string('business_contact_name')->nullable();
-            $table->string('business_contact_number')->nullable();
-            $table->string('business_contact_email')->nullable();
-            $table->string('business_website')->nullable();
+            $table->integer('category_id')->unsigned()->nullable();
+            $table->string('contact_name')->nullable();
+            $table->string('contact_number')->nullable();
+            $table->string('contact_email')->nullable();
+            $table->string('website')->nullable();
             $table->string('address_1')->nullable();
             $table->string('address_2')->nullable();
             $table->string('area')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();
-            $table->text('business_profile')->nullable();
-            $table->json('business_sectors')->nullable();
-            $table->json('services')->nullable();
+            $table->text('profile')->nullable();
+            $table->integer('sector_id')->unsigned()->nullable();
             $table->json('business_hours')->nullable();
-            $table->string('business_establishment_date')->nullable();
+            $table->string('establishment_date')->nullable();
             $table->string('geographical_area')->nullable();
             $table->json('search_keywords')->nullable();
             $table->timestamps();

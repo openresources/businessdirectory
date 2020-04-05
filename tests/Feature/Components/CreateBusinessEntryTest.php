@@ -4,6 +4,7 @@ namespace Tests\Feature\Components;
 
 use App\Business;
 use App\Http\Livewire\CreateBusinessEntry;
+use App\Service;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -18,45 +19,46 @@ class CreateBusinessEntryTest extends TestCase
     {
         $this->actingAs(factory(User::class)->create());
 
+        $services = factory(Service::class, 3)->create();
         $establishmentDate = Carbon::now()->subtract(1, 'year');
 
         Livewire::test(CreateBusinessEntry::class)
-            ->set('business_name', 'moon')
-            ->set('business_contact_name', 'bob')
-            ->set('business_contact_number', '12345')
-            ->set('business_contact_email', 'abc@d.test')
-            ->set('business_website', 'http://abcd.test')
+            ->set('name', 'moon')
+            ->set('contact_name', 'bob')
+            ->set('contact_number', '12345')
+            ->set('contact_email', 'abc@d.test')
+            ->set('website', 'http://abcd.test')
             ->set('address_1', 'foo bar')
             ->set('address_2', 'foo bar')
             ->set('area', 'bar')
             ->set('city', 'baz')
             ->set('country', 'bar')
-            ->set('business_profile', 'baz')
-            ->set('business_sectors', ['foo', 'bar'])
-            ->set('services', ['foo', 'bar'])
+            ->set('profile', 'baz')
+            ->set('sector_id', 1)
+            ->set('services', ['1', '2'])
             ->set('business_hours', ['foo', 'bar'])
-            ->set('business_establishment_date', $establishmentDate)
+            ->set('establishment_date', $establishmentDate)
             ->set('geographical_area', 'foo')
-            ->call('create');
+            ->call('create')
+            ->assertRedirect(route('businesses.index'))
+        ;
 
-        $this->assertTrue(Business::where('business_name', 'moon')
-                ->where('business_contact_name', 'bob')
-                ->where('business_contact_number', '12345')
-                ->where('business_contact_email', 'abc@d.test')
-                ->where('business_website', 'http://abcd.test')
+        $this->assertTrue(Business::where('name', 'moon')
+                ->where('contact_name', 'bob')
+                ->where('contact_number', '12345')
+                ->where('contact_email', 'abc@d.test')
+                ->where('website', 'http://abcd.test')
                 ->where('address_1', 'foo bar')
                 ->where('address_2', 'foo bar')
                 ->where('area', 'bar')
                 ->where('city', 'baz')
                 ->where('country', 'bar')
-                ->where('business_profile', 'baz')
-                ->where('business_sectors->item-0', 'foo')
-                ->where('business_sectors->item-1', 'bar')
-                ->where('services->item-0', 'foo')
-                ->where('services->item-1', 'bar')
+                ->where('profile', 'baz')
+                ->where('sector_id', 1)
                 ->where('business_hours->item-1', 'bar')
-                ->where('business_establishment_date', $establishmentDate)
+                ->where('establishment_date', $establishmentDate)
                 ->where('geographical_area', 'foo')
                 ->exists());
+
     }
 }
