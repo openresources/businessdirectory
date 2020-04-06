@@ -3,6 +3,24 @@ const mix = require('laravel-mix');
 require('laravel-mix-tailwind');
 require('laravel-mix-purgecss');
 
+if (!mix.inProduction()) {
+
+   const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+
+   mix.webpackConfig({
+      plugins: [
+         new BrowserSyncPlugin({
+            files: [
+               "app/**/*",
+               "public/**/*",
+               "resources/views/**/*",
+               "packages",
+               "routes/**/*"
+            ]
+         })
+      ]
+   })
+}
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -19,7 +37,7 @@ mix.js('resources/js/app.js', 'public/js')
    .tailwind('./tailwind.config.js');
 
 if (mix.inProduction()) {
-  mix
-   .version()
-   .purgeCss();
+   mix
+      .version()
+      .purgeCss();
 }
