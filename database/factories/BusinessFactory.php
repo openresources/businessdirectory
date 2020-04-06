@@ -34,7 +34,7 @@ $factory->define(App\Business::class, function (Faker $faker) {
 
 $factory->state(App\Business::class, 'sector', function () {
     return [
-        'category_id' => factory(App\Sector::class)->create()->id,
+        'sector_id' => Sectors::getRandomValue()
     ];
 });
 

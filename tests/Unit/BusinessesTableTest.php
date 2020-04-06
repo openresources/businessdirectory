@@ -51,6 +51,7 @@ class BusinessesTableTest extends TestCase
             'business_hours',
             'establishment_date',
             'geographical_area',
+            'logo_url',
             'search_keywords',
             'created_at',
             'updated_at'

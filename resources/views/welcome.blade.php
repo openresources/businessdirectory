@@ -1,62 +1,34 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.welcome_tpl')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+@section('content')
+<div class="py-20 bg-gray-300">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <h2 class="text-4xl font-medium text-gray-700 mb-6">{{ __('Top Sectors') }}</h2>
 
-    <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-</head>
-<body class="bg-gray-100 h-screen antialiased leading-none">
-<div class="flex flex-col">
-    @if(Route::has('login'))
-        <div class="absolute top-0 right-0 mt-4 mr-4">
-            @auth
-                <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
-            @else
-                <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase pr-6">{{ __('Login') }}</a>
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
-                @endif
-            @endauth
-        </div>
-    @endif
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            @foreach ($sectors as $sector)
 
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="flex flex-col justify-around h-full">
-            <div>
-                <h1 class="text-gray-600 text-center font-light tracking-wider text-5xl mb-6">
-                    {{ config('app.name', 'Laravel') }}
-                </h1>
-                <ul class="list-reset">
-                    <li class="inline pr-8">
-                        <a href="https://laravel.com/docs" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Documentation">Documentation</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://laracasts.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Laracasts">Laracasts</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://laravel-news.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="News">News</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://nova.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Nova">Nova</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://forge.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Forge">Forge</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://github.com/laravel/laravel" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="GitHub">GitHub</a>
-                    </li>
-                </ul>
-            </div>
+            <a href="{{ route('sectors.show', $sector) }}">
+                <div class="transition-all flex flex-col items-center justify-center bg-white shadow hover:shadow-lg rounded h-56 p-6">
+                    <img src="{{filled($sector->icon)? asset('img/icons' . $sector->icon) : asset('img/icons/photo.svg')}}"
+                        alt="icon" class="fill-current text-green-600 opacity-75 hover:opacity-100 h-24 w-24">
+                    <h3 class="text-lg font-semibold text-blue-700 sm:hover:text-pink-700 my-2"> {{ $sector->name }} </h3>
+                </div>                
+            </a>
+
+            @endforeach
         </div>
     </div>
 </div>
-</body>
-</html>
+
+<div class="py-20 bg-white">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h5>
+            are you a business owner?
+        </h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos rem impedit, vitae facere voluptate dolores ad
+            omnis et excepturi voluptatibus qui officia velit quo unde. Neque veniam dicta eum aut?</p>
+    </div>
+</div>
+@endsection

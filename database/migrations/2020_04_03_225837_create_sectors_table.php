@@ -18,6 +18,7 @@ class CreateSectorsTable extends Migration
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
             $table->string('description')->nullable();
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
     }

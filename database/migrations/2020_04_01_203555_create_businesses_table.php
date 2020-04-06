@@ -33,6 +33,7 @@ class CreateBusinessesTable extends Migration
             $table->json('business_hours')->nullable();
             $table->string('establishment_date')->nullable();
             $table->string('geographical_area')->nullable();
+            $table->string('logo_url')->nullable();
             $table->json('search_keywords')->nullable();
             $table->timestamps();
         });
