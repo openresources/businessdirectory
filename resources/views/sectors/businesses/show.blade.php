@@ -6,12 +6,13 @@
         <h3 class="text-gray-300"><a class="hover:text-white"
                 href="route('sectors.show', $sector)">{{ $sector->name }}</a></h3>
         <h2 class="text-white text-3xl py-2">{{ $business->name }}</h2>
+        <h3 class="text-gray-300"> {{__('Established:')}} {{ formatDate($business->establishment_date) }}</h3>
     </div>
 </div>
 <div class="py-16  mb-16">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="details card">
+        <div class="details card w-full sm:w-full md:w-4/5 lg:w-2/3">
             <h3 class="h4">Business Profile</h3>
             <p>
                 {{ $business->profile }}
@@ -19,13 +20,30 @@
 
             <h4 class="h4">Address</h4>
             <address>
-                {{ "{$business->address_1},"}} {{$business->address_2 ?? ''}} 
-
+                {{ "{$business->address_1},"}}
+                {{ filled($business->address_2) ? "{$business->address_2} ," : "" }}
                 {{ filled($business->area) ? "{$business->area} ," : "" }}
-                {{ $business->city }}
-                {{ $business->country }}
-
+                {{ filled($business->city) ? "{$business->city} ," : "" }}
+                {{ filled($business->city) ? "{$business->city}" : "" }}
             </address>
+
+            @if (filled($business->website))
+            <h4>Website</h4>
+            <address>{{ $business->website }}</address>
+            @endif
+            
+            <h4>Email</h4>
+            <address>{{ $business->contact_email }}</address>
+            
+            <h4>Telephone</h4>
+            <address>{{ $business->contact_name }}</address>
+            <address>{{ $business->contact_number }}</address>
+            
+            <h4>{{ __('Business Hours') }}</h4>
+            <p>
+                {{ militaryTime($business->business_hours['start']) }} -
+                {{ militaryTime($business->business_hours['end']) }}
+            </p>
         </div>
 
     </div>
