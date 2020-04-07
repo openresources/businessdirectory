@@ -16,7 +16,7 @@ class SectorController extends Controller
      */
     public function index()
     {
-        $sectors = Sector::get()->take(6);
+        $sectors = Sector::withCount('businesses')->get();
         return view('sectors.index', compact('sectors'));
     }
 
