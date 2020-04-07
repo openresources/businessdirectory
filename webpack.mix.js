@@ -33,8 +33,10 @@ if (!mix.inProduction()) {
  */
 
 mix.js('resources/js/app.js', 'public/js')
-   .postCss('resources/css/app.css', 'public/css')
-   .tailwind('./tailwind.config.js');
+   .postCss('resources/css/app.css', 'public/css', [
+      require('tailwindcss'),
+      require('postcss-nested')
+   ])
 
 if (mix.inProduction()) {
    mix
