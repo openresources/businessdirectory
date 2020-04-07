@@ -1,7 +1,7 @@
 @extends('layouts.scaffold')
 
 @section('scaffold')
-<div class="h-screen bg-gray-300">
+<div class="min-h-screen">
     @yield('content')
 </div>
 @endsection
