@@ -53,7 +53,7 @@ class BusinessController extends Controller
      */
     public function show(Sector $sector, Business $business)
     {
-        return view('sectors.businesses.show', compact('business'));
+        return view('sectors.businesses.show', compact('business', 'sector'));
     }
 
     /**

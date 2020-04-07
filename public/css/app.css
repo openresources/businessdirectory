@@ -1,3 +1,20 @@
+.h4 {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  color: #4a5568;
+}
+
+/* .card {
+    @apply rounded bg-white shadow p-10;
+}
+
+.details {
+
+    p {
+        @apply mb-4 text-red-700;
+    }
+} */
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -607,6 +624,8 @@ video {
   height: auto;
 }
 
+/* @tailwind base; */
+
 /**
  * This injects any component classes registered by plugins.
  *
@@ -899,6 +918,8 @@ video {
   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
   border-color: #63b3ed;
 }
+
+/* @tailwind components; */
 
 /**
  * Here you would add any of your custom component classes; stuff that you'd
@@ -14247,6 +14268,8 @@ video {
 .duration-1000 {
   transition-duration: 1000ms;
 }
+
+/* @tailwind utilities; */
 
 /**
  * Here you would add any custom utilities you need that don't come out of the

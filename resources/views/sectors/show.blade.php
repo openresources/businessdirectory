@@ -10,13 +10,10 @@
 
         @foreach ($businesses as $business)
         <a href="{{ route('sectors.businesses.show',[$sector, $business]) }}">
-            <div class="transition-all flex items-start justify-start bg-white shadow hover:shadow-lg rounded sm:h-48 p-6 mb-6">
-                <div class="logo flex-initial">
-                    <img src="{{ $business->logo_url }}" alt="" class="w-56 h-32">
-                </div>
+            <div class="transition-all flex items-start justify-start bg-white shadow hover:shadow-lg rounded h-auto p-6 mb-6">
                 <div class="flex-auto">
                     <h3 class="text-lg text-blue-700 font-semibold mb-2"> {{ $business->name }}</h3>
-                    <p class="">{{ $business->profile }}</p>
+                    <p class="w-3/4 sm:w-full md:w-3/4">{{ $business->profile }}</p>
                     <p>
                         <a class="button button-primary bg-blue-700 hover:bg-blue-900 text-white inline-block rounded shadow mt-4 px-6 py-2" href="{{ route('sectors.businesses.show',[$sector, $business]) }}">
                         {{ __('More') }}

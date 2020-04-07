@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Sector;
 use App\Http\Controllers\Controller;
+use App\Sector;
 
 class WelcomeController extends Controller
 {
@@ -13,5 +12,5 @@ class WelcomeController extends Controller
         $sectors = Sector::get()->take(8);
 
         return view('welcome', compact('sectors'));
-    }    
+    }
 }
