@@ -14,7 +14,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 h-screen antialiased leading-none">
+<body class="bg-gray-300 h-screen antialiased leading-none">
     <div id="app">
         <nav class="bg-gray-900 shadow py-6">
             <div class="container mx-auto px-6 md:px-0">
@@ -49,9 +49,11 @@
 
         @yield('scaffold')
 
-        <div class="py-20 bg-gray-800">
-            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-                footer place holder..
+        <div class="py-5 bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center text-gray-300">
+                    <p>&copy; Unity Hill Chapel {{ now()->year }} </p>
+                </div>
             </div>
         </div>
     </div>
