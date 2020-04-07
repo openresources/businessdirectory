@@ -2,10 +2,8 @@
 
 @section('scaffold')
     
-
-This is the scaffold content of the site here...
-
-
-
+<div class="flex flex-col justify-center min-h-screen">
+    @yield('content')
+</div>
 
 @endsection
