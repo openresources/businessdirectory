@@ -5,16 +5,27 @@
   color: #4a5568;
 }
 
-/* .card {
-    @apply rounded bg-white shadow p-10;
+.card {
+  border-radius: 0.25rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 2.5rem;
 }
 
-.details {
+.details h4 {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    color: #4a5568;
+  }
 
-    p {
-        @apply mb-4 text-red-700;
-    }
-} */
+.details address,
+    .details p {
+    margin-bottom: 1rem;
+    color: #4a5568;
+    width: 100%;
+    line-height: 1.5;
+  }
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.

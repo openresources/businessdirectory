@@ -2,13 +2,16 @@
     @apply font-bold mb-3 text-lg text-gray-700;
 }
 
-/* .card {
+.card {
     @apply rounded bg-white shadow p-10;
 }
 
 .details {
-
-    p {
-        @apply mb-4 text-red-700;
+    h4 {
+        @apply font-bold mb-3 text-lg text-gray-700;
     }
-} */
+    address,
+    p {
+        @apply mb-4 text-gray-700 w-full leading-normal;
+    }
+}
