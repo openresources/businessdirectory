@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <livewire:styles />
 </head>
 
 <body class="bg-gray-300 h-screen antialiased leading-none">
@@ -59,6 +60,7 @@
     </div>
 
     <!-- Scripts -->
+    <livewire:scripts />
     <script src="{{ mix('js/app.js') }}"></script>
 
     @if (App::environment('local'))
