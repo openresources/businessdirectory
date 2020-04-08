@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64ad9333e7b0e1ced826f0675efb3e1f",
+    "content-hash": "aba0030bb76e0882f0b19abbe07c7196",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4781,74 +4781,6 @@
                 "whoops"
             ],
             "time": "2020-01-15T10:00:00+00:00"
-        },
-        {
-            "name": "fruitcake/laravel-telescope-toolbar",
-            "version": "v1.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fruitcake/laravel-telescope-toolbar.git",
-                "reference": "0992ca4446fa3d4afadf2a18124b498e02491d5d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fruitcake/laravel-telescope-toolbar/zipball/0992ca4446fa3d4afadf2a18124b498e02491d5d",
-                "reference": "0992ca4446fa3d4afadf2a18124b498e02491d5d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "laravel/framework": "^5.8|^6|^7",
-                "laravel/telescope": "^2.1|^3.0",
-                "php": "^7.1.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Fruitcake\\TelescopeToolbar\\ToolbarServiceProvider"
-                    ],
-                    "aliases": {
-                        "Toolbar": "Fruitcake\\TelescopeToolbar\\Toolbar"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Fruitcake\\TelescopeToolbar\\": "src/"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fruitcake",
-                    "email": "info@fruitcake.nl"
-                },
-                {
-                    "name": "Barry vd. Heuvel",
-                    "email": "barryvdh@gmail.com"
-                }
-            ],
-            "description": "Toolbar for Laravel Telescope based on Symfony Web Profiler",
-            "keywords": [
-                "debug",
-                "debugbar",
-                "laravel",
-                "profiler",
-                "telescope",
-                "toolbar",
-                "webprofiler"
-            ],
-            "time": "2020-03-16T18:56:59+00:00"
         },
         {
             "name": "fzaninotto/faker",
