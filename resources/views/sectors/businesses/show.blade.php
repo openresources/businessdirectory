@@ -44,10 +44,10 @@
                 @endif
     
                 <h4>Email</h4>
-                <address>{{ $business->contact_email }}</address>
+                <address>{{ $business->email }}</address>
     
                 <h4>Contact Person</h4>
-                <address>{{ $business->contact_name }}, {{ "tel - $business->contact_number" }}</address>
+                <address>{{ $business->contact_name }}, {{ "tel - $business->phone" }}</address>
     
             </div>
         </div>

@@ -20,8 +20,8 @@ class CreateBusinessesTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->integer('category_id')->unsigned()->nullable();
             $table->string('contact_name')->nullable();
-            $table->string('contact_number')->nullable();
-            $table->string('contact_email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
             $table->string('website')->nullable();
             $table->string('address_1')->nullable();
             $table->string('address_2')->nullable();

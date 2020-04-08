@@ -39,15 +39,15 @@ class BusinessTest extends TestCase
     public function testBusinessHasContactNumber()
     {
         $phoneNumber = $this->faker->phoneNumber;
-        $business = factory(Business::class)->create(['contact_number' => $phoneNumber]);
-        $this->assertEquals($phoneNumber, $business->contact_number);
+        $business = factory(Business::class)->create(['phone' => $phoneNumber]);
+        $this->assertEquals($phoneNumber, $business->phone);
     }
 
     public function testBusinessHasEmail()
     {
         $contactEmail = $this->faker->safeEmail;
-        $business = factory(Business::class)->create(['contact_email' => $contactEmail]);
-        $this->assertEquals($contactEmail, $business->contact_email);
+        $business = factory(Business::class)->create(['email' => $contactEmail]);
+        $this->assertEquals($contactEmail, $business->email);
     }
 
     public function testBusinessHasWebsite()

@@ -2,16 +2,18 @@
 
 namespace App\Http\Livewire;
 
-use App\Business;
-use Illuminate\Support\Arr;
 use Livewire\Component;
+use Illuminate\Support\Arr;
+use App\Sector;
+use App\Common\Enums\Sectors;
+use App\Business;
 
 class CreateBusinessEntry extends Component
 {
     public $name;
     public $contact_name;
-    public $contact_number;
-    public $contact_email;
+    public $phone;
+    public $email;
     public $website;
     public $address_1;
     public $address_2;
@@ -30,9 +32,16 @@ class CreateBusinessEntry extends Component
         'establishment_date' => 'date',
     ];
 
+    public function mount()
+    {
+        $this->name = "";
+    }
+
     public function render()
     {
-        return view('livewire.create-business-entry');
+        $sectors = Sectors::toSelectArray();
+
+        return view('livewire.create-business-entry', compact('sectors'));
     }
 
     public function create()
@@ -40,8 +49,8 @@ class CreateBusinessEntry extends Component
         $validatedData = $this->validate([
             'name' => 'required',
             'contact_name' => 'required',
-            'contact_number' => 'required',
-            'contact_email' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
             'website' => 'sometimes|nullable|url',
             'address_1' => 'required',
             'address_2' => 'sometimes|nullable|string',
@@ -49,17 +58,20 @@ class CreateBusinessEntry extends Component
             'city' => 'required',
             'country' => 'required',
             'profile' => 'sometimes|nullable|string',
+            'sector_id' => 'required|numeric',
             'establishment_date' => 'sometimes',
             'geographical_area' => 'sometimes',
         ]);
 
         $validatedData = $this->appendOptionalProperties($validatedData);
-        
+
         $business = Business::create($validatedData);
 
         $business->services()->syncWithoutDetaching($this->services);
 
-        return redirect()->to(route('businesses.index'));
+        $sector = Sector::find($validatedData['sector_id']);
+
+        return redirect()->to(route('sectors.show', $sector));
     }
 
     public function appendOptionalProperties($validatedData)
@@ -67,16 +79,16 @@ class CreateBusinessEntry extends Component
         if (filled($this->sector_id)) {
             $validatedData = Arr::add($validatedData, 'sector_id', $this->sector_id);
         }
-        
+
         if (filled($this->business_hours)) {
             $validatedData = $this->appendProperty('business_hours', $this->business_hours, $validatedData);
         }
-        
+
         if (filled($this->search_keywords)) {
             $validatedData = $this->appendProperty('search_keywords', $this->search_keywords, $validatedData);
         }
 
-        return $validatedData;   
+        return $validatedData;
     }
 
     public function appendProperty($fieldName, $items, $validatedData)

@@ -15,8 +15,8 @@ $factory->define(App\Business::class, function (Faker $faker) {
     return [
         'name' => "{$faker->company} {$faker->companySuffix}",
         'contact_name' => "{$faker->firstName} {$faker->lastName}",
-        'contact_number' => $faker->phoneNumber,
-        'contact_email' => $faker->safeEmail,
+        'phone' => $faker->phoneNumber,
+        'email' => $faker->safeEmail,
         'website' => $faker->url,
         'address_1' => $faker->secondaryAddress,
         'address_2' => $faker->streetName,
