@@ -76,8 +76,7 @@ class CreateBusinessEntry extends Component
             $validatedData = $this->appendProperty('search_keywords', $this->search_keywords, $validatedData);
         }
 
-        return $validatedData;
-        
+        return $validatedData;   
     }
 
     public function appendProperty($fieldName, $items, $validatedData)
@@ -91,5 +90,4 @@ class CreateBusinessEntry extends Component
 
         return Arr::add($validatedData, $item, $$item);
     }
-
 }
