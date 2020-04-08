@@ -6,7 +6,7 @@
 
         <div class="flex items-center justify-between">
             <h2 class="text-4xl font-medium text-gray-700 mb-6">{{ __('Top Sectors') }}</h2>
-            <a class="text-blue-900 hover:text-pink-900" href="{{ route('sectors.index') }}">View all <span class="text-xl">&#129042;</span></a>
+            <a class="no-underline" href="{{ route('sectors.index') }}">View all <span class="text-xl">&#129042;</span></a>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -31,7 +31,7 @@
             Do you own a business?
         </h5>
         <p class="py-3">Get a free business listing today by filling in a few details about your business.</p>
-        <p class="py-3"><a href="#" class="inline-block rounded shadow py-3 px-6 bg-blue-700 hover:bg-blue-900 text-white">Get Free Listing</a></p>
+        <p class="py-3"><a href="{{ route('businesses.create') }}" class="btn">Get Free Listing</a></p>
     </div>
 </div>
 @endsection

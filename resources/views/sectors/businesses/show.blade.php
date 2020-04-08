@@ -15,7 +15,7 @@
         <div class="w-full sm:w-full md:w-4/5 lg:w-2/3">   
             <div class="flex items-center justify-between mb-2">
                 <div>&nbsp;</div>
-                <a class="text-blue-900 hover:text-pink-900" href="{{ route('sectors.show', $sector) }}">Back to {{ $sector->name }} <span class="text-xl">&#129042;</span></a>
+                <a class="no-underline" href="{{ route('sectors.show', $sector) }}">Back to {{ $sector->name }} <span class="text-xl">&#129042;</span></a>
             </div>
             <div class="details card">
                 <h3 class="h4">Business Profile</h3>

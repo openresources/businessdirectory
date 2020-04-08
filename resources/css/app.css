@@ -10,8 +10,23 @@
  * @import "tailwindcss/base";
  */
 @import "tailwindcss/base";
-/* @tailwind base; */
 
+h1 {
+    @apply text-2xl pb-4;
+  }
+  h2 {
+    @apply text-xl pb-3 font-bold text-gray-800;
+  
+  }
+
+  h3 {
+    @apply text-lg pb-2 font-bold text-gray-700;
+  }
+
+  a {
+    @apply text-blue-600 underline;
+  }
+  
 /**
  * This injects any component classes registered by plugins.
  *
@@ -20,7 +35,6 @@
  * @import "tailwindcss/components";
  */
 @import "tailwindcss/components";
-/* @tailwind components; */
 
 /**
  * Here you would add any of your custom component classes; stuff that you'd
@@ -48,7 +62,6 @@
  * @import "tailwindcss/utilities";
  */
 @import "tailwindcss/utilities";
-/* @tailwind utilities; */
 
 /**
  * Here you would add any custom utilities you need that don't come out of the
