@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/openresources/businessdirectory/compare/v1.0.0...v1.1.0) (2020-04-09)
+
+
+### Features
+
+* add notification to login page ([ed26882](https://github.com/openresources/businessdirectory/commit/ed26882f5698c6c06abcaa6422a7cabf5c3b4275))
+* add search ([1f4b781](https://github.com/openresources/businessdirectory/commit/1f4b781e92907423bbf1135f5298b30f18a439eb))
+
 ## 1.0.0 (2020-04-09)
 
 
