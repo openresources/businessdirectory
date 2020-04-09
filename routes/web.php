@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
- 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Route::middleware('auth')->group(function () {
@@ -21,6 +20,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('sectors', 'SectorController');
     Route::resource('sectors.businesses', 'Sector\BusinessController');
 });
+
+Route::resource('search', 'SearchController')->only('index');
 
 Auth::routes();
 
