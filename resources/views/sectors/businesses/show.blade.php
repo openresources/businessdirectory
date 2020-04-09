@@ -25,8 +25,12 @@
 
                 <h4>{{ __('Business Hours') }}</h4>
                 <p>
-                    {{ militaryTime($business->business_hours['start']) }} -
-                    {{ militaryTime($business->business_hours['end']) }}
+                    @if (filled($business->business_hours))
+                        {{ filled($business->business_hours)?  militaryTime($business->business_hours['start']) : "N/A" }} -
+                        {{ filled($business->business_hours)?  militaryTime($business->business_hours['end']) : "N/A" }}
+                    @else
+                        Not provided
+                    @endif
                 </p>
                 
                 <h4 class="h4">Address</h4>

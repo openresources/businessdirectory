@@ -2,13 +2,18 @@
 
 namespace App;
 
-use App\User;
-use App\Sluggable;
-use App\Service;
 use App\Category;
+use App\Sector;
+use App\Service;
+use App\Sluggable;
+use App\User;
+use Laravel\Scout\Searchable;
 
 class Business extends Sluggable
 {
+
+    use Searchable;
+
     protected $guarded = [];
 
     protected $casts = [
@@ -16,6 +21,8 @@ class Business extends Sluggable
         'search_keywords' => 'json',
         'establishment_date' => 'date',
     ];
+
+    protected $touches = ['sector'];
 
     public function category()
     {
@@ -36,4 +43,15 @@ class Business extends Sluggable
     {
         return $this->belongsToMany(Service::class);
     }
+
+    // public function toSearchableArray()
+    // {
+    //     $array = $this->toArray();
+
+    //     $array = $this->transform($array);
+
+    //     $array['sector_name'] = $this->sector->name;
+
+    //     return $array;
+    // }
 }

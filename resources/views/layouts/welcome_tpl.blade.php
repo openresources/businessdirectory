@@ -10,14 +10,11 @@
                 <p class="mt-2 text-sm text-gray-500 md:text-base">Lorem ipsum dolor sit amet, consectetur adipisicing
                     elit. Blanditiis commodi cum cupiditate ducimus!</p>
                 <div>
-                    <form class="flex flex-col mt-6" action="">
+                    <form class="flex flex-col mt-6" action="{{ route('search.index') }}">
                         @csrf
 
                         <input name="keyword" type="text" placeholder="Which service are you searching for?"
                             class="rounded shadow text-gray-500 w-4/5 p-3 mb-4">
-                        <select name="sector" class="rounded shadow text-gray-500 w-4/5 p-3 mb-4">
-                            <option value="">{{ __('All sectors') }}</option>
-                        </select>
                         <button type="submit" class="rounded shadow bg-yellow-600 font-bold text-white w-4/5 p-4 mb-4">
                             Search
                         </button>
