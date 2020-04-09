@@ -71,8 +71,11 @@
             "@php artisan key:generate --ansi"
         ]
     },
-    "repositories": [{
-        "type": "vcs",
-        "url": "git@github.com:openresources/users-roles-table-additions.git"
-    }]
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:openresources/users-roles-table-additions.git"
+        }
+    ],
+    "version": "1.0.0"
 }
