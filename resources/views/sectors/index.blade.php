@@ -2,6 +2,12 @@
 
 @section('content')
 
+
+
+@if (session('status'))
+    <x-alert class="mb-4" type="success" :message="session('status')"/>
+@endif
+
 <div class="flex items-center justify-between">
     <h2 class="text-2xl mb-4">{{ __('Sectors') }}</h2>
 </div>

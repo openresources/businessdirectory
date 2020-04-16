@@ -31,7 +31,7 @@
             Do you own a business?
         </h5>
         <p class="py-3">Get a free business listing today by filling in a few details about your business.</p>
-        <p class="py-3"><a href="{{ route('businesses.create') }}" class="btn">Get Free Listing</a></p>
+        <p class="py-3"><a href="{{ route('businesses.create') }}" class="btn">@lang('Get a Free Listing')</a></p>
     </div>
 </div>
 @endsection

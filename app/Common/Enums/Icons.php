@@ -18,7 +18,7 @@ class Icons extends Enum
     const INDUSTRIAL = 'industry.svg';
     const INFORMATION_TECHNOLOGY = 'gps.svg';
     const MATERIALS = 'diamond.svg';
-    const REAL_ESTATE = 'real-estate';
+    const REAL_ESTATE = 'real-estate.svg';
     const TECHNOLOGY_COMMUNICATIONS = 'satellite.svg';
     const UTILITIES = 'gear.svg';
 
