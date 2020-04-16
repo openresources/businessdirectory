@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/openresources/businessdirectory/compare/v1.1.0...v1.2.0) (2020-04-16)
+
+
+### Features
+
+* add alert component ([579bd58](https://github.com/openresources/businessdirectory/commit/579bd5813c1083b3d6cc2940c240ae744945537e))
+* add email verification to workflow ([9017311](https://github.com/openresources/businessdirectory/commit/90173114df91037a9ceb7d5b00054e284c7665ce))
+
 ## [1.1.0](https://github.com/openresources/businessdirectory/compare/v1.0.0...v1.1.0) (2020-04-09)
 
 
