@@ -68,6 +68,37 @@
     background-color: #2a4365;
   }
 
+.alert {
+  border-top-width: 4px;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.alert-error {
+    background-color: #fff5f5;
+    border-color: #f56565;
+    color: #742a2a;
+  }
+
+.alert-error .error {
+      color: #f56565;
+    }
+
+.alert-success {
+    background-color: #e6fffa;
+    border-color: #38b2ac;
+    color: #234e52;
+  }
+
+.alert-success .success {
+      color: #38b2ac;
+    }
+
 .form-row {
   margin-bottom: 1rem;
 }

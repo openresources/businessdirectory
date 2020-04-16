@@ -47,6 +47,26 @@
     }
 }
 
+.alert {
+    @apply border-t-4 rounded-b px-4 py-3 shadow-md;
+
+    &-error {
+        @apply bg-red-100 border-red-500 text-red-900;
+
+        .error {
+            @apply text-red-500;
+        }
+    }
+
+    &-success {
+        @apply bg-teal-100 border-teal-500 text-teal-900;
+
+        .success {
+            @apply text-teal-500;
+        }
+    }
+}
+
 .form-row {
     @apply mb-4;
 

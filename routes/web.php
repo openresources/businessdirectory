@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::view('welcome', 'auth.welcome');
     Route::resource('businesses', 'BusinessController');
     Route::resource('sectors', 'SectorController');
     Route::resource('sectors.businesses', 'Sector\BusinessController');
@@ -23,6 +24,7 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('search', 'SearchController')->only('index');
 
-Auth::routes();
+Route::view('/register/verify', 'auth.verify')->name('register.verify');
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
