@@ -23,6 +23,8 @@ php artisan key:gen
 
 4. Update the .env file as required
 
+    _*for the Algolia entries, sign up for a free [Algolia account](https://www.algolia.com/) and retrieve  the Application ID along with the Admin API Key._
+
 5. Create an empty sqlite database e.g.
 ```
 touch database/business_directory.sqlite
