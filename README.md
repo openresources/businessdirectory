@@ -6,34 +6,46 @@
 This is a light weight business directory which does exactly what it says on the box. Download, install and customize to suit your needs.
 
 ## Setup Instructions
+
 1. Install composer packages, laravel etc.
-```
->_ composer install
-```
 
-2. Copy/Create the application's .env file
-```
-.env.example to .env
-```
+   ```bash
+   composer install
+   ```
 
-3. Generate the application key 
-```
-php artisan key:gen
-```
+1. Copy/Create the application's .env file
 
-4. Update the .env file as required
+    ```bash
+    copy .env.example .env
+    ```
 
-    _*for the Algolia entries, sign up for a free [Algolia account](https://www.algolia.com/) and retrieve  the Application ID along with the Admin API Key._
+1. Generate the application key
 
-5. Create an empty sqlite database e.g.
-```
-touch database/business_directory.sqlite
-```
+   ```bash
+    php artisan key:gen
+   ```
 
-6. Run the database migration files and seed the core database tables
-```
-php artisan migrate --seed
-```
+1. Update the .env file as required
+
+    _\*for the Algolia entries, sign up for a free [Algolia account](https://www.algolia.com/) and retrieve the Application ID along with the Admin API Key._
+
+1. Create an empty sqlite database e.g.
+
+   ```bash
+   touch database/business_directory.sqlite
+   ```
+
+1. Run the database migration files and seed the core database tables
+
+   ```bash
+   php artisan migrate --seed
+   ```
+
+1. Start indexing with Algolia
+
+   ```bash
+   php artisan scout:import
+   ```
 
 ## Changelog
 
@@ -49,8 +61,8 @@ If you discover any security related issues, please use the issue tracker.
 
 ## Credits
 
-- [Eviano Afiemo](https://github.com/openresources)
-- [All Contributors](../../contributors)
+-   [Eviano Afiemo](https://github.com/openresources)
+-   [All Contributors](../../contributors)
 
 ## License
 
