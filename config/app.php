@@ -135,6 +135,10 @@ return [
         'name' => env('DEFAULT_ADMIN_NAME', 'Admin Account')
      ],
 
+     'ui' => [
+        'tab_image_url' => env('TAB_IMAGE_URL', asset('img/default_tab_bg.jpg'))
+     ],
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
