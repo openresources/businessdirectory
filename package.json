@@ -27,5 +27,5 @@
         "standard-version": "^7.1.0",
         "vue-template-compiler": "^2.6.11"
     },
-    "version": "1.2.3"
+    "version": "1.2.4"
 }
