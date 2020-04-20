@@ -4,7 +4,7 @@
 <div class="min-h-screen">
     <section class="bg-indigo-900 py-6">
         <div class="container mx-auto">
-            <form action="" method="GET">
+            <form action="{{ route('search.index') }}" method="GET">
                 <input class="w-full h-10 px-3 rounded focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg"
                     name="keyword" type="search" placeholder="Enter search key (e.g. company name, town, service type or sector)">
             </form>
