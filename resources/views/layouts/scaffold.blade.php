@@ -15,7 +15,7 @@
     <livewire:styles />
 </head>
 
-<body class="bg-gray-300 h-screen antialiased leading-none">
+<body class="bg-white h-screen antialiased leading-none">
     <div id="app">
         <nav class="bg-gray-900 shadow py-6">
             <div class="container mx-auto px-6 md:px-0">
