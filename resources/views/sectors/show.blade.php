@@ -13,7 +13,7 @@
     <div class="listing">
 
         @forelse ($businesses as $business)
-        <div class="transition-all flex items-start justify-start bg-white shadow hover:shadow-lg rounded h-auto p-6 mb-6">
+        <div class="transition-all flex items-start justify-start bg-indigo-100 shadow hover:shadow-lg rounded h-auto p-6 mb-6">
             <div class="flex-auto">
                 <h3> {{ $business->name }}</h3>
                 <p>{{ $business->profile }}</p>
@@ -26,8 +26,8 @@
             </div>
         </div>
         @empty
-            <div class="card">
-                <p>The {{ $sector->name }} sector currently has no business listings.</p>
+            <div class="card bg-indigo-100">
+                <p>The {{ $sector->name }} sector currently has no business listings. <a class="text-gray-700 hover:underline" href="{{ url()->previous() }}">Return to the previous page.</a></p>
             </div>
         @endforelse
 

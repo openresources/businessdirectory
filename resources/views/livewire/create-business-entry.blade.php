@@ -1,6 +1,6 @@
 <div>
 
-    <div class="card w-full md:w-1/2 lg:w-2/3">
+    <div class="card bg-indigo-100 w-full md:w-1/2 lg:w-2/3">
         <form wire:submit.prevent="create">
 
             <div class="flex flex-col form-row">
