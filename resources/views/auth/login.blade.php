@@ -1,9 +1,9 @@
-@extends('layouts.default_tpl')
+@extends('layouts.auth_tpl')
 
 @section('content')
     <div class="container mx-auto">
         <div class="flex flex-col flex-wrap items-center justify-start">
-            <p class="text-center italic py-4 w-full max-w-md leading-snug">@lang('Access to the Business Directory is <br> Restricted to registered users only')</p>
+            <p class="bg-gray-400 opacity-75 rounded mb-4 font-medium text-lg text-center italic py-4 w-full max-w-sm leading-snug">@lang('Access to the Business Directory is <br> Restricted to registered users only')</p>
             <div class="w-full max-w-sm">
                 <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 

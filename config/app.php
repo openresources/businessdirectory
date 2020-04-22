@@ -136,7 +136,8 @@ return [
      ],
 
      'ui' => [
-        'tab_image_url' => env('TAB_IMAGE_URL', asset('img/default_tab_bg.jpg'))
+        'tab_image_url' => env('TAB_IMAGE_URL', asset('img/default_tab_bg.jpg')),
+        'auth_image_url' => env('TAB_IMAGE_URL', asset('img/default_auth_bg.jpg'))
      ],
 
     /*
