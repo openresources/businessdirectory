@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.auth_tpl')
 
 @section('content')
     <div class="container mx-auto">
