@@ -1,6 +1,6 @@
 <div>
 
-    <div class="card bg-indigo-100 w-full md:w-1/2 lg:w-2/3">
+    <div class="card bg-gray-400 w-full md:w-1/2 lg:w-2/3">
         <form wire:submit.prevent="create">
 
             <div class="flex flex-col form-row">
@@ -13,7 +13,7 @@
             <div class="flex flex-col form-row">
                 <label for="sector">Sector</label>
                 <select wire:model="sector_id" class="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
-                    <option value="null" placeholder="ook">---</option>
+                    <option value="null" placeholder="">---</option>
                     @foreach ($sectors as $key=>$value)
                     <option value="{{ $key }}">{{ $value }}</option>
                     @endforeach
@@ -108,7 +108,7 @@
                 @error('geographical_area') <span class="error">{{ $message }}</span> @enderror
             </div>
 
-            <button class="btn" type="submit">Save Contact</button>
+            <button class="btn" type="submit">Submit Listing</button>
         </form>
     </div>
 

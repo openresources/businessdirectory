@@ -1,6 +1,6 @@
 @extends('layouts.scaffold')
 
-@section('scaffold')
+@section('page')
 <div class="w-full">
     <div class="flex bg-blue-900" style="height:500px;">
         <div class="hidden lg:block lg:w-1/2" style="clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);">
@@ -32,7 +32,5 @@
 </div>
 
 @yield('content')
-
-
 
 @endsection

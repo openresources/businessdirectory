@@ -1,6 +1,6 @@
 @extends('layouts.scaffold')
 
-@section('scaffold')
+@section('page')
     
 <div class="flex flex-col justify-center min-h-screen">
     @yield('content')

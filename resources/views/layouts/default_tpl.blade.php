@@ -1,6 +1,6 @@
 @extends('layouts.scaffold')
 
-@section('scaffold')
+@section('page')
 <div class="min-h-screen">
     <section class="bg-indigo-900 py-6">
         <div class="container mx-auto">
@@ -12,7 +12,7 @@
         </div>
     </section>
 
-    <section class="bg-gray-300 bg-center bg-no-repeat" style="background:url({{config('app.ui.tab_image_url')}});">
+    <section class="bg-gray-300 bg-center bg-no-repeat" style="background:url({{asset(config('app.ui.tab_image_url'))}});">
         @php
             use Illuminate\Support\Str;
             $highlightAddBusinessTab = Str::of(url()->current())->contains(route('businesses.create')) ;
