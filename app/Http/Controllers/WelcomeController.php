@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $sectors = Sector::get()->take(8);
+        $sectors = Sector::withCount('businesses')->get()->take(8);
 
         return view('welcome', compact('sectors'));
     }

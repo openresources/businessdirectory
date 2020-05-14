@@ -16,7 +16,7 @@
                 <div class="transition-all flex flex-col items-center justify-center bg-white shadow hover:shadow-lg rounded h-56 p-6">
                     <img src="{{filled($sector->icon)? asset('img/icons/' . $sector->icon) : asset('img/icons/real-estate.svg')}}"
                         alt="icon" class="fill-current text-green-600 hover:opacity-75 hover:skew-y-6  h-20 w-20">
-                    <h3 class="text-lg font-semibold text-blue-700 sm:hover:text-pink-700 mt-4"> {{ $sector->name }} </h3>
+                    <h3 class="text-lg font-semibold text-blue-700 sm:hover:text-pink-700 mt-4"> {{ "{$sector->name}({$sector->businesses_count}) "}} </h3>
                 </div>                
             </a>
 
