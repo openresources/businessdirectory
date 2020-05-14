@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/openresources/businessdirectory/compare/v1.3.2...v1.4.0) (2020-05-14)
+
+
+### Features
+
+* add authorisation policy ([c9b0aa2](https://github.com/openresources/businessdirectory/commit/c9b0aa2d5f8c6551806415e214fef72dc87d3e7e))
+* add email-login functionality for verification of pre-subscribed users ([fcafc3f](https://github.com/openresources/businessdirectory/commit/fcafc3ffc804107955476f8ed7f678439030c179))
+* add services ([7fd9142](https://github.com/openresources/businessdirectory/commit/7fd9142ef9f3705f5a429e71799b376634c5e9b7))
+
+
+### Bug Fixes
+
+* remove breaking helper function call from config file ([9bbd197](https://github.com/openresources/businessdirectory/commit/9bbd1970f661ef61ee4470fad2706680cbf17c61))
+
 ### [1.3.2](https://github.com/openresources/businessdirectory/compare/v1.3.1...v1.3.2) (2020-04-22)
 
 ### [1.3.1](https://github.com/openresources/businessdirectory/compare/v1.3.0...v1.3.1) (2020-04-22)
