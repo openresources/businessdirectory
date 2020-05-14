@@ -83,8 +83,9 @@ class CreateBusinessEntry extends Component
         $validatedData = $this->runValidation();
 
         $business = Business::create($validatedData);
-
-        $business->services()->syncWithoutDetaching($this->services);
+        auth()->user()->businesses()->save($business);
+        
+        $business->services()->sync($this->filterServiceIds());
 
         $sector = Sector::find($validatedData['sector_id']);
 
@@ -146,18 +147,21 @@ class CreateBusinessEntry extends Component
     {
         $validatedData = $this->runValidation();
 
-        $service_ids = collect($this->services)->filter(function($value, $key){
-            return $value != false;
-        })->keys()->toArray();
-
         $business = Business::find($this->business_id);
 
         $business->update($validatedData);
 
-        $business->services()->sync($service_ids);
+        $business->services()->sync($this->filterServiceIds());
 
         $sector = Sector::find($validatedData['sector_id']);
 
         return redirect()->to(route('sectors.businesses.show', [$sector, $business]));
+    }
+
+    protected function filterServiceIds()
+    {
+        return collect($this->services)->filter(function ($value, $key) {
+            return $value != false;
+        })->keys()->toArray();
     }
 }
