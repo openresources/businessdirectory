@@ -29,7 +29,12 @@ class BusinessController extends Controller
      */
     public function create(Sector $sector)
     {
-        
+
+    }
+
+    public function edit(Sector $sector, Business $business)
+    {
+        return view('businesses.edit', compact('business'));
     }
 
     /**
@@ -53,6 +58,10 @@ class BusinessController extends Controller
      */
     public function show(Sector $sector, Business $business)
     {
+        $business = Business::where('id', $business->id)
+            ->withCount('services')
+            ->with('services')->first();
+
         return view('sectors.businesses.show', compact('business', 'sector'));
     }
 

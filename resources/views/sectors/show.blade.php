@@ -16,6 +16,8 @@
         <div class="transition-all flex items-start justify-start bg-indigo-100 shadow hover:shadow-lg rounded h-auto p-6 mb-6">
             <div class="flex-auto">
                 <h3> {{ $business->name }}</h3>
+                <h4 class="text-lg font-semibold italic py-2">{{ Str::plural('Service', $business->services_count) }}</h4>
+                <p class="mb-2 italic"> @foreach ($business->servicesList() as $service) {{ $service }} @if ($loop->remaining), @endif @endforeach</p>
                 <p>{{ $business->profile }}</p>
                 <p>
                     <a class="btn mt-4"

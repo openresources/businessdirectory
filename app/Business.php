@@ -44,6 +44,10 @@ class Business extends Sluggable
         return $this->belongsToMany(Service::class);
     }
 
+    public function servicesList()
+    {
+        return self::services()->pluck('name');
+    }
     // public function toSearchableArray()
     // {
     //     $array = $this->toArray();

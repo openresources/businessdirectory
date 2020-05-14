@@ -79,7 +79,9 @@
 
     input,
     textarea {
-        @apply appearance-none;
+        &:not([type="checkbox"]) {
+            @apply appearance-none;
+        }
     }
 
     input,
@@ -90,6 +92,11 @@
         &:focus {
             @apply outline-none bg-white border-blue-500;
         }
+
+        &[type="checkbox"] {
+            @apply inline;
+        }
+
     }
 
     label {
