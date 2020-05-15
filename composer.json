@@ -20,7 +20,8 @@
         "livewire/livewire": "^1.0",
         "openresources/email-login": "^1.2",
         "openresources/users-roles-table-additions": "^1.0",
-        "spatie/laravel-sluggable": "^2.4"
+        "spatie/laravel-sluggable": "^2.4",
+        "spatie/laravel-tags": "^2.6"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",
