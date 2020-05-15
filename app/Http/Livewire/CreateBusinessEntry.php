@@ -8,6 +8,7 @@ use App\Sector;
 use App\Service;
 use Illuminate\Support\Arr;
 use Livewire\Component;
+use Spatie\Tags\Tag;
 
 class CreateBusinessEntry extends Component
 {
@@ -26,6 +27,9 @@ class CreateBusinessEntry extends Component
     public $sector_id;
     public $services = [];
     protected $service_ids = [];
+    public $tags = [];
+    public $tag;
+    public $tagList;
     public $business_hours;
     public $establishment_date;
     public $geographical_area;
@@ -40,7 +44,7 @@ class CreateBusinessEntry extends Component
     {
         $this->action = $action;
         $this->name = "";
-
+        $this->tagList = Tag::get();
         if ($business) {
             $this->fillProperties($business);
         }
@@ -67,6 +71,7 @@ class CreateBusinessEntry extends Component
         $this->establishment_date = $business->establishment_date;
         $this->geographical_area = $business->geographical_area;
         $this->search_keywords = $business->search_keywords;
+        $this->tags = $business->tags->pluck('name')->toArray();
     }
 
     public function render()
@@ -82,14 +87,21 @@ class CreateBusinessEntry extends Component
 
         $validatedData = $this->runValidation();
 
+        $tags = $this->buildTags($this->tag);
+
         $business = Business::create($validatedData);
         auth()->user()->businesses()->save($business);
-        
+
         $business->services()->sync($this->filterServiceIds());
 
         $sector = Sector::find($validatedData['sector_id']);
 
         return redirect()->to(route('sectors.show', $sector));
+    }
+
+    protected function buildTags($tags)
+    {
+        dd(explode(" ", $tags));
     }
 
     protected function runValidation()
@@ -145,17 +157,26 @@ class CreateBusinessEntry extends Component
 
     public function update()
     {
+
         $validatedData = $this->runValidation();
 
         $business = Business::find($this->business_id);
 
         $business->update($validatedData);
-
         $business->services()->sync($this->filterServiceIds());
+        $business->syncTags($this->tags);
 
         $sector = Sector::find($validatedData['sector_id']);
 
         return redirect()->to(route('sectors.businesses.show', [$sector, $business]));
+    }
+
+    public function updateTags()
+    {
+        if ($this->tag) {
+            $this->tags[] = $this->tag;
+        }
+        $this->tag = "";
     }
 
     protected function filterServiceIds()

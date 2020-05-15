@@ -2,17 +2,19 @@
 
 namespace App;
 
-use App\Category;
-use App\Sector;
-use App\Service;
-use App\Sluggable;
-use App\User;
+use Spatie\Tags\HasTags;
 use Laravel\Scout\Searchable;
+use App\User;
+use App\Sluggable;
+use App\Service;
+use App\Sector;
+use App\Category;
 
 class Business extends Sluggable
 {
 
-    use Searchable;
+    use HasTags, Searchable;
+
 
     protected $guarded = [];
 

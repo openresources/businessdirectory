@@ -18,6 +18,11 @@
         <h3 class="text-gray-300"> {{__('Established:')}} {{ formatDate($business->establishment_date) }}</h3>
         <h3 class="text-white text-xl italic py-2"> {{ Str::plural('Service',$business->services_count) }} </h3>
         <p class="text-gray-300 italic"> @foreach ($business->servicesList() as $service) {{ $service }} @if ($loop->remaining), @endif @endforeach </p>
+        <p class="mt-6 italic">
+            @foreach ($business->tags as $tag)
+                <span class="bg-indigo-100 mr-1 py-2 px-3 rounded shadow text-sm text-gray-700">{{ $tag->name }}</span>
+            @endforeach
+        </p>
     </div>
 </div>
 

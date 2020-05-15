@@ -60,7 +60,9 @@ class BusinessController extends Controller
     {
         $business = Business::where('id', $business->id)
             ->withCount('services')
-            ->with('services')->first();
+            ->with('services')
+            ->with('tags')
+            ->first();
 
         return view('sectors.businesses.show', compact('business', 'sector'));
     }

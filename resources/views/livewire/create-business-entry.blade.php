@@ -37,8 +37,28 @@
                     </p>
                     @endforeach
                 </div>
-                @json($services)
                 @error('services') <span class="error">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="flex flex-col form-row">
+                <label for="tags">Keywords <br><span class="text-sm"></span></label>
+                <div class="mb-2 py-1">
+                    @foreach ($tags as $tag)
+                        <span class="mr-1 px-2 py-1 bg-indigo-100 text-gray-700 rounded">{{ $tag }}</span>
+                    @endforeach
+                </div>
+                {{-- <div class="flex justify-between  bg-gray-100 rounded"> --}}
+                    <input class="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl" type="text" id="tags"
+                        list="tagsList"
+                        wire:keydown.tab.prevent="updateTags"
+                        wire:model.debounce.1000ms="tag" placeholder="Click tab to add each keyword">
+                    <datalist id="tagList">
+                        @foreach ($tagList as $tag)
+                            <option value="{{ $tag }}">
+                        @endforeach
+                    </datalist>
+                {{-- </div> --}}
+                @error('tags') <span class="error">{{ $message }}</span> @enderror
             </div>
 
             <div class="flex flex-col form-row">
