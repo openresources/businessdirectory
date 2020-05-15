@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/openresources/businessdirectory/compare/v1.4.0...v1.5.0) (2020-05-15)
+
+
+### Features
+
+* add keywords(tags) to business entry form ([edbaf89](https://github.com/openresources/businessdirectory/commit/edbaf89aaa3494be8b4aa1b3d4af1b27c05b5877))
+
+
+### Bug Fixes
+
+* fix assignment of business to logged in user during creation ([7193dea](https://github.com/openresources/businessdirectory/commit/7193dea5755f50bac0dc9e4b30719be6e49266d0))
+
 ## [1.4.0](https://github.com/openresources/businessdirectory/compare/v1.3.2...v1.4.0) (2020-05-14)
 
 
