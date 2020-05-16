@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/openresources/businessdirectory/compare/v1.5.0...v1.6.0) (2020-05-16)
+
+
+### Features
+
+* link search result titles to records ([fab426f](https://github.com/openresources/businessdirectory/commit/fab426fc581ae6656a4c207066afc372da2eca21))
+
+
+### Bug Fixes
+
+* fix error creation of new business after introduction of tags(keywords) ([015e12f](https://github.com/openresources/businessdirectory/commit/015e12f8150f4814ab1fb0564c9a02df806552c1))
+
 ## [1.5.0](https://github.com/openresources/businessdirectory/compare/v1.4.0...v1.5.0) (2020-05-15)
 
 
