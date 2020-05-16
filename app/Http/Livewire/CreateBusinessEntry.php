@@ -87,13 +87,11 @@ class CreateBusinessEntry extends Component
 
         $validatedData = $this->runValidation();
 
-        $tags = $this->buildTags($this->tag);
-
         $business = Business::create($validatedData);
-        auth()->user()->businesses()->save($business);
-
         $business->services()->sync($this->filterServiceIds());
-
+        $business->syncTags($this->tags);
+        auth()->user()->businesses()->save($business);
+        
         $sector = Sector::find($validatedData['sector_id']);
 
         return redirect()->to(route('sectors.show', $sector));
