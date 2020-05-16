@@ -9,7 +9,9 @@
         @forelse ($results as $business)
         <div class="card mb-4">
             <h3>
-                {{$business->name}}
+                <a href="{{ route('sectors.businesses.show', [$business->sector, $business]) }}">
+                    {{$business->name}}
+                </a>
             </h3>
             <p class="leading-snug">{{ $business->profile }}</p>
         </div>
