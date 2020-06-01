@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Role;
 use App\Business;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -41,5 +42,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function businesses()
     {
         return $this->hasMany(Business::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 }

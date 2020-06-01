@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^1.0",
         "openresources/email-login": "^1.2",
+        "openresources/user-manager": "^1.3",
         "openresources/users-roles-table-additions": "^1.0",
         "spatie/laravel-sluggable": "^2.4",
         "spatie/laravel-tags": "^2.6"
@@ -78,11 +79,15 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:openresources/users-roles-table-additions.git"
+            "url": "git@github.com:openresources/email-login.git"
         },
         {
             "type": "vcs",
-            "url": "git@github.com:openresources/email-login.git"
+            "url": "git@github.com:openresources/user-manager.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:openresources/users-roles-table-additions.git"
         }
     ],
     "version": "1.6.0"
