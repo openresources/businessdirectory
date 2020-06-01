@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/openresources/businessdirectory/compare/v1.6.0...v1.7.0) (2020-06-01)
+
+
+### Features
+
+* add user-manager functionality (bulk import/removal) ([281d26d](https://github.com/openresources/businessdirectory/commit/281d26df417fbbcdcab5560b46958ec4ca98ebe5))
+
 ## [1.6.0](https://github.com/openresources/businessdirectory/compare/v1.5.0...v1.6.0) (2020-05-16)
 
 
