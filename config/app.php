@@ -2,6 +2,25 @@
 
 return [
 
+        /*
+    |-------------------------------------------------------------------------
+    | Additional Configurations
+    | ------------------------------------------------------------------------
+     */
+
+    'app_shell_template' => env('APP_SHELL_TEMPLATE', 'layouts.app_shell'),
+    'admin_prefix' => env('ADMIN_PREFIX', 'admin'),
+
+    'admin' => [
+        'email' => env('DEFAULT_ADMIN_EMAIL'),
+        'name' => env('DEFAULT_ADMIN_NAME', 'Admin Account'),
+    ],
+
+    'ui' => [
+        'tab_image_url' => env('TAB_IMAGE_URL', '/img/default_tab_bg.jpg'),
+        'auth_image_url' => env('TAB_IMAGE_URL', '/img/default_auth_bg.jpg'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -122,24 +141,6 @@ return [
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
-
-    /*
-    |-------------------------------------------------------------------------
-    | Additional Configurations
-    | ------------------------------------------------------------------------
-     */
-
-    'app_shell_template' => env('APP_SHELL_TEMPLATE', 'layouts.app_shell'),
-
-    'admin' => [
-        'email' => env('DEFAULT_ADMIN_EMAIL'),
-        'name' => env('DEFAULT_ADMIN_NAME', 'Admin Account'),
-    ],
-
-    'ui' => [
-        'tab_image_url' => env('TAB_IMAGE_URL', '/img/default_tab_bg.jpg'),
-        'auth_image_url' => env('TAB_IMAGE_URL', '/img/default_auth_bg.jpg'),
-    ],
 
     /*
     |--------------------------------------------------------------------------

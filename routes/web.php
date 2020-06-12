@@ -26,3 +26,11 @@ Route::view('/register/verify', 'auth.verify')->name('register.verify');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::namespace('Admin')->prefix(config('app.admin_prefix'))
+    ->name('admin.')->group(function () {
+
+        Route::middleware('auth')->group(function () {
+                Route::get('/', 'DashboardController@index')->name('index');
+        });
+    });
