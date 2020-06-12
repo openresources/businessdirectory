@@ -27,5 +27,8 @@
         "standard-version": "^7.1.0",
         "vue-template-compiler": "^2.6.11"
     },
-    "version": "1.7.0"
+    "version": "1.7.0",
+    "dependencies": {
+        "alpinejs": "^2.3.5"
+    }
 }
