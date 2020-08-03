@@ -13,7 +13,7 @@
     <div class="grid grid-cols-2 flex-1">
         <div class="flex items-center justify-center bg-blue-700 text-white  p-20">
             <p class="text-center">
-                <a class="btn bg-white text-black hover:text-white text-xl" href="{{ route('businesses.create') }}">Get a Free Listing</a>
+                <a class="btn btn-primary" href="{{ route('businesses.create') }}">Get a Free Listing Now !!!</a>
             </p>
         </div>
         <div class="flex items-center justify-center bg-gray-900 text-white p-20">

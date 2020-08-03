@@ -14,7 +14,7 @@
                     <form class="w-full p-6" method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="flex flex-wrap mb-6">
+                        <div class="form-row">
                             <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
                                 {{ __('E-Mail Address') }}:
                             </label>
@@ -28,7 +28,7 @@
                             @enderror
                         </div>
 
-                        <div class="flex flex-wrap mb-6">
+                        <div class="form-row">
                             <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
                                 {{ __('Password') }}:
                             </label>
@@ -42,15 +42,15 @@
                             @enderror
                         </div>
 
-                        <div class="flex mb-6">
+                        <div class="form-row">
                             <label class="inline-flex items-center text-sm text-gray-700" for="remember">
                                 <input type="checkbox" name="remember" id="remember" class="form-checkbox" {{ old('remember') ? 'checked' : '' }}>
                                 <span class="ml-2">{{ __('Remember Me') }}</span>
                             </label>
                         </div>
 
-                        <div class="flex flex-wrap items-center">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        <div class="form-row flex-wrap">
+                            <button type="submit" class="btn btn-primary">
                                 {{ __('Login') }}
                             </button>
 

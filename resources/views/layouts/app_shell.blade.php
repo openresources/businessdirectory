@@ -3,33 +3,65 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{config('app.name', 'Laravel')}} @hasSection ('title') - @yield('title') @endif</title>
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @stack('styles')
     @stack('vendor-assets')
-    <livewire:styles />
+
+    <style>
+        /* always hidden */
+        [x-cloak=""] {
+            display: none;
+        }
+
+        /* hidden on mobile/smaller screens */
+        @media screen and (max-width: 768px) {
+            [x-cloak="mobile"] {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-white h-screen antialiased leading-none">
+<body class="bg-gray-100 antialiased leading-none">
     <div id="app">
-        @yield('scaffold')
-    </div>
-    <!-- Scripts -->
-    <livewire:scripts />
-    <script src="{{ mix('js/app.js') }}"></script>
+        <header>
+            @yield('navbar-main')
+            @sectionMissing('navbar-main')
+            <nav class="bg-blue-900 shadow py-3" aria-labelledby="site-navigation">
+                @include('user-manager::partials.menus.navbar_main')
+            </nav>
+            @endif
+        </header>
+        <main>
+            <div id="scaffold">
+                <div>
+                    @stack('sidebar') {{-- a container, ideally <nav>xyz</nav> --}}
+                </div>
 
-    @if (App::environment('local'))
-    <script id="__bs_script__">
-        //<![CDATA[
-        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
-    //]]>
-    </script>
-    @endif
+                @yield('scaffold')
+            </div>
+        </main>
+        <footer>
+            @yield('footer')
+        </footer>
+    </div>
+
+    <template x-cloak>
+        @stack('partials')
+    </template>
+    <!-- Scripts -->
+    @stack('scripts')
 </body>
+
 </html>

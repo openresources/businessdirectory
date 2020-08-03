@@ -13,7 +13,7 @@
                     <form class="w-full p-6" method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="flex flex-wrap mb-6">
+                        <div class="form-row">
                             <label for="name" class="block text-gray-700 text-sm font-bold mb-2">
                                 {{ __('Name') }}:
                             </label>
@@ -27,7 +27,7 @@
                             @enderror
                         </div>
 
-                        <div class="flex flex-wrap mb-6">
+                        <div class="form-row">
                             <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
                                 {{ __('E-Mail Address') }}:
                             </label>
@@ -41,7 +41,7 @@
                             @enderror
                         </div>
 
-                        <div class="flex flex-wrap mb-6">
+                        <div class="form-row">
                             <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
                                 {{ __('Password') }}:
                             </label>
@@ -55,7 +55,7 @@
                             @enderror
                         </div>
 
-                        <div class="flex flex-wrap mb-6">
+                        <div class="form-row">
                             <label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2">
                                 {{ __('Confirm Password') }}:
                             </label>
@@ -63,7 +63,7 @@
                             <input id="password-confirm" type="password" class="form-input w-full" name="password_confirmation" required autocomplete="new-password">
                         </div>
 
-                        <div class="flex flex-wrap">
+                        <div class="form-row">
                             <button type="submit" class="inline-block align-middle text-center select-none border font-bold whitespace-no-wrap py-2 px-4 rounded text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700">
                                 {{ __('Register') }}
                             </button>

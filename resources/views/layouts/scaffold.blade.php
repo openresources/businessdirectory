@@ -1,18 +1,17 @@
-@extends(config('email-login.app_shell_template'))
+@extends(config('app.app_shell_template'))
+
+@push('vendor-assets')
+<link href="{{ asset('vendor/user-manager/css/app.css') }}" rel="stylesheet">
+<livewire:styles />
+<script src="{{ asset('vendor/user-manager/js/app.js') }}" defer></script>
+@endpush
 
 @section('scaffold')
-
-@include('partials.menus.site_nav')
-
-<div class="min-h-screen">
-@yield('page')
-</div>
-
-<div class="py-5 bg-gray-800">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center text-gray-300">
-            <p>&copy; Unity Hill Chapel {{ now()->year }} </p>
-        </div>
-    </div>
+<div>
+    @yield('page')
 </div>
 @endsection
+
+@push('scripts')
+<livewire:scripts />
+@endpush

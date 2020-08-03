@@ -1,12 +1,10 @@
 @extends('layouts.scaffold')
 
 @section('page')
-<div class="min-h-screen"
+<div class="h-full"
     style="background:url({{asset(config('app.ui.auth_image_url'))}}) no-repeat 50% 90%; background-size: cover;">
-    <section>
-        <div class="container mx-auto py-16">
-            @yield('content')
-        </div>
+    <section class="h-full flex justify-center items-center">
+        @yield('content')
     </section>
 </div>
 @endsection

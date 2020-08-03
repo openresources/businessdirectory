@@ -13,15 +13,14 @@
             <div>
                 <h2 class="text-3xl font-semibold text-gray-100 md:text-4xl">Your search starts<span
                         class="text-indigo-600"> here...</span></h2>
-                <p class="mt-2 text-sm text-gray-500 md:text-base">Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Blanditiis commodi cum cupiditate ducimus!</p>
+                <p class="mt-2 text-sm text-gray-500 md:text-base">@lang('strapline')</p>
                 <div>
                     <form class="flex flex-col mt-6" action="{{ route('search.index') }}">
                         @csrf
 
                         <input name="keyword" type="text" placeholder="Which service are you searching for?"
                             class="rounded shadow text-gray-500 w-4/5 p-3 mb-4">
-                        <button type="submit" class="rounded shadow bg-yellow-600 font-bold text-white w-4/5 p-4 mb-4">
+                        <button type="submit" class="transition btn bg-yellow-600  hover:bg-yellow-700 focus:bg-yellow-700 text-white w-4/5 p-4 mb-4">
                             Search
                         </button>
                     </form>
