@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e3e5b327db58c78e0d52e283c1905db",
+    "content-hash": "948ee1e62ce3b60eafcfe76d4699bf06",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2766,16 +2766,16 @@
         },
         {
             "name": "openresources/user-manager",
-            "version": "1.4.4",
+            "version": "1.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openresources/user-manager.git",
-                "reference": "ad8d010872d06f4834afc18ded6583a4b98d15b9"
+                "reference": "aa67318c2fe1974b580569bff73fead166374c4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openresources/user-manager/zipball/ad8d010872d06f4834afc18ded6583a4b98d15b9",
-                "reference": "ad8d010872d06f4834afc18ded6583a4b98d15b9",
+                "url": "https://api.github.com/repos/openresources/user-manager/zipball/aa67318c2fe1974b580569bff73fead166374c4e",
+                "reference": "aa67318c2fe1974b580569bff73fead166374c4e",
                 "shasum": ""
             },
             "require": {
@@ -2834,10 +2834,10 @@
                 "user-manager"
             ],
             "support": {
-                "source": "https://github.com/openresources/user-manager/tree/v1.4.4",
+                "source": "https://github.com/openresources/user-manager/tree/v1.5.6",
                 "issues": "https://github.com/openresources/user-manager/issues"
             },
-            "time": "2020-08-02T18:48:41+00:00"
+            "time": "2020-09-23T21:50:21+00:00"
         },
         {
             "name": "openresources/users-roles-table-additions",
@@ -9266,6 +9266,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0",
-    "version": "1.7.6"
+    "plugin-api-version": "1.1.0"
 }
