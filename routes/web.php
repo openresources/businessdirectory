@@ -13,11 +13,12 @@
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
+Route::resource('sectors', 'SectorController');
+Route::resource('sectors.businesses', 'Sector\BusinessController');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('welcome', 'auth.welcome');
     Route::resource('businesses', 'BusinessController');
-    Route::resource('sectors', 'SectorController');
-    Route::resource('sectors.businesses', 'Sector\BusinessController');
 });
 
 Route::resource('search', 'SearchController')->only('index');
