@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/openresources/businessdirectory/compare/v1.7.7...v1.8.0) (2020-09-29)
+
+
+### Features
+
+* update email-login reduce from 3 to 2 steps ([1e95726](https://github.com/openresources/businessdirectory/commit/1e95726fe9bd6b354d02b391f5dd6860e04049dd))
+
 ### [1.7.7](https://github.com/openresources/businessdirectory/compare/v1.7.6...v1.7.7) (2020-09-23)
 
 ### [1.7.6](https://github.com/openresources/businessdirectory/compare/v1.7.5...v1.7.6) (2020-09-23)
