@@ -2,7 +2,7 @@
 
 @push('vendor-assets')
 <link href="{{ asset('vendor/user-manager/css/app.css') }}" rel="stylesheet">
-{{-- <livewire:styles /> --}}
+<livewire:styles />
 <script src="{{ asset('vendor/user-manager/js/app.js') }}" defer></script>
 @endpush
 
@@ -13,5 +13,5 @@
 @endsection
 
 @push('scripts')
-{{-- <livewire:scripts /> --}}
+<livewire:scripts />
 @endpush
