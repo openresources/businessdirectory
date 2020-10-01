@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://github.com/openresources/businessdirectory/compare/v1.8.0...v1.8.1) (2020-10-01)
+
+
+### Bug Fixes
+
+* re-introduce livewire imports in scaffold ([b25a3ac](https://github.com/openresources/businessdirectory/commit/b25a3acd95418bc98c37832980243c0b2ca23991))
+
 ## [1.8.0](https://github.com/openresources/businessdirectory/compare/v1.7.7...v1.8.0) (2020-09-29)
 
 
