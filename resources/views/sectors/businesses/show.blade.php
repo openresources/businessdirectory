@@ -39,43 +39,53 @@
                     class="text-xl">&#129042;</span></a>
         </div>
 
-        <div class="details card bg-indigo-100">
-            <header>
-                <h3 class="text-lg font-bold leading-normal text-blue-800">Business Profile</h3>
-            </header>
-            <p>
-                {{ $business->profile }}
-            </p>
+        <div class="details card bg-white divide-y divide-gray-200">
 
-            <h3 class="text-lg font-bold leading-normal mt-2 text-blue-800">{{ __('Business Hours') }}</h3>
-            <p>
-                @if (filled($business->business_hours))
-                {{ filled($business->business_hours)?  militaryTime($business->business_hours['start']) : "N/A" }} -
-                {{ filled($business->business_hours)?  militaryTime($business->business_hours['end']) : "N/A" }}
-                @else
-                Not provided
+            <section class="py-2 my-1">
+                <header>
+                    <h3 class="text-lg font-bold leading-normal text-blue-800">Business Profile</h3>
+                </header>
+                <p>
+                    {{ $business->profile }}
+                </p>
+            </section>
+
+
+            <section class="py-2 my-1">
+                <h3 class="text-lg font-bold leading-normal mt-2 text-blue-800">{{ __('Business Hours') }}</h3>
+                <p>
+                    @if (filled($business->business_hours))
+                    {{ filled($business->business_hours)?  militaryTime($business->business_hours['start']) : "N/A" }} -
+                    {{ filled($business->business_hours)?  militaryTime($business->business_hours['end']) : "N/A" }}
+                    @else
+                    Not provided
+                    @endif
+                </p>
+            </section>
+
+            <section class="py-2 my-1">
+                <h3 class="text-lg font-bold leading-normal mt-2 text-blue-800">Address</h3>
+                <address>
+                    {{ "{$business->address_1},"}}
+                    {{ filled($business->address_2) ? "{$business->address_2} ," : "" }}
+                    {{ filled($business->area) ? "{$business->area} ," : "" }}
+                    {{ filled($business->city) ? "{$business->city} ," : "" }}
+                    {{ filled($business->city) ? "{$business->city}" : "" }}
+                </address>
+            </section>
+
+            <section class="py-2 my-1">
+                @if (filled($business->website))
+                <h3 class="text-lg font-bold leading-normal mt-2 text-blue-800">Website</h3>
+                <address>{{ $business->website }}</address>
                 @endif
-            </p>
 
-            <h3 class="text-lg font-bold leading-normal mt-2 text-blue-800">Address</h3>
-            <address>
-                {{ "{$business->address_1},"}}
-                {{ filled($business->address_2) ? "{$business->address_2} ," : "" }}
-                {{ filled($business->area) ? "{$business->area} ," : "" }}
-                {{ filled($business->city) ? "{$business->city} ," : "" }}
-                {{ filled($business->city) ? "{$business->city}" : "" }}
-            </address>
+                <h3 class="text-lg font-bold leading-normal mt-2 text-blue-800">Email</h3>
+                <address>{{ $business->email }}</address>
 
-            @if (filled($business->website))
-            <h3 class="text-lg font-bold leading-normal mt-2 text-blue-800">Website</h3>
-            <address>{{ $business->website }}</address>
-            @endif
-
-            <h3 class="text-lg font-bold leading-normal mt-2 text-blue-800">Email</h3>
-            <address>{{ $business->email }}</address>
-
-            <h3 class="text-lg font-bold leading-normal mt-2 text-blue-800">Contact Person</h3>
-            <address>{{ $business->contact_name }}, {{ "tel - $business->phone" }}</address>
+                <h3 class="text-lg font-bold leading-normal mt-2 text-blue-800">Contact Person</h3>
+                <address>{{ $business->contact_name }}, {{ "tel - $business->phone" }}</address>
+            </section>
         </div>
     </div>
 </div>

@@ -13,10 +13,12 @@
     <div class="listing">
 
         @forelse ($businesses as $business)
-        <div class="transition-all flex items-start justify-start bg-indigo-100 shadow hover:shadow-lg rounded h-auto p-6 mb-6">
+        <div class="transition-all flex items-start justify-start bg-white shadow hover:shadow-lg rounded h-auto p-6 mb-6">
             <div class="flex-auto">
             <header>
-                <h3 class="text-lg font-bold leading-normal text-blue-800"> {{ $business->name }}</h3>
+                <a  href="{{ route('sectors.businesses.show',[$sector, $business]) }}">
+                    <h3 class="text-lg font-bold leading-normal text-blue-800"> {{ $business->name }}</h3>
+                </a>
             </header>
             <div>
                 <h4 class="font-semibold leading-snug text-blue-600">{{ Str::plural('Service', $business->services_count) }}</h4>
@@ -24,15 +26,15 @@
                 <p>{{ $business->profile }}</p>
             </div>
             <footer class="pt-6">
-                <a class="btn btn-primary"
+                <a class="btn btn-primary py-1 px-5"
                     href="{{ route('sectors.businesses.show',[$sector, $business]) }}">
-                    {{ __('More') }}
+                    {{ __('View Details') }}
                 </a>
             </footer>
             </div>
         </div>
         @empty
-            <div class="card bg-indigo-100">
+            <div class="card bg-white">
                 <p>The {{ $sector->name }} sector currently has no business listings. <a class="text-gray-700 hover:underline" href="{{ url()->previous() }}">Return to the previous page.</a></p>
             </div>
         @endforelse
