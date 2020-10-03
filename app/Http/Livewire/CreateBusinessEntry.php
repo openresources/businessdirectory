@@ -109,7 +109,7 @@ class CreateBusinessEntry extends Component
             'contact_name' => 'required',
             'phone' => 'required',
             'email' => 'required',
-            'website' => 'sometimes|nullable|url',
+            'website' => 'sometimes|nullable',
             'address_1' => 'required',
             'address_2' => 'sometimes|nullable|string',
             'area' => 'sometimes|nullable|string',

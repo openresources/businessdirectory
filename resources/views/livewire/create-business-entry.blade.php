@@ -89,7 +89,7 @@
                 <div class="form-row">
                     <label for="website">Website</label>
                     <input class="form-input" type="text" id="website"
-                        wire:model.lazy="website" placeholder="Company website address">
+                        wire:model.lazy="website" placeholder="http://your-website.com">
                     @error('website') <span class="error text-sm text-red-700 italic">{{ $message }}</span> @enderror
                 </div>
     
